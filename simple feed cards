@@ -1,0 +1,166 @@
+@mixin feed-card{
+	.card{
+		border:0;
+		@include box-shadow;
+		font-size: 18px;
+		background-color:#fff;
+		position: relative;
+		z-index: 1;
+		padding: 1em;
+		@include transition-in;
+		border-radius:0;
+		@include responsivemmd{
+			font-size: 14px;
+			padding: 0px;
+			box-shadow:none !important;
+		}
+		img{
+			@include image;
+		}
+
+
+		.card__title{
+			font-size: 18px;
+			line-height: 1.3;
+			margin: 0;
+			margin-bottom: 15px;
+			color: #fff;
+		}
+
+		.small__title{
+			color: #fff;
+			font-size: 16px;
+			margin-bottom: 15px;
+		}
+
+		time{
+			font-size: 14px;
+			color: rgba(35,35,35,0.3);
+			@include responsivemmd{
+				font-size: 12px;
+			}
+		}
+
+		
+		.para{
+			color: $white;
+			font-size: 15px;
+			margin-bottom: 0;
+			font-weight: 400;
+		}
+
+		.card__top{
+			margin-bottom: 10px;
+			.card__title{
+				@include card-title;
+				line-height: 0.8;
+				height: auto !important;
+				a{
+					display: inline-block;
+					&.small{
+						opacity: 0.5;
+						margin-left: 4px;
+					}
+				}
+			}
+			.card__top__link{
+				margin-left: auto;
+				align-self:flex-start;
+				svg{
+					height: 4px;
+					width: auto;
+					@include responsivemmd{
+						height: 3px;
+					}
+				}
+			}
+			.card__top__body{
+				padding:0 26px;
+				@include responsivemmd{
+					padding:0 12px;
+				}
+			}
+		}
+
+		.user__text{
+			color: $dark;
+			margin-bottom: 20px;
+			font-size: 18px;
+			white-space: pre-line;
+			@include responsivemmd{
+				margin-bottom: 8px;
+				font-size: 15px;
+			}
+
+			.hash{
+				color: rgba($primary-color, 0.5);
+				&:hover{
+					color: $primary-color;
+				}
+			}
+		}
+
+		.card__action{
+			display: flex;
+			justify-content: flex-start;
+			align-items:center;
+			font-size: 15px;
+			@include responsivemmd{
+				flex-wrap: wrap;
+			}
+
+			a{
+				color: rgba($dark, 0.55);
+				svg{
+					fill: rgba($dark, 0.55);
+					overflow: visible;
+					margin-right: 3px;
+					width: auto;
+					height: 20px;
+					stroke: rgba($dark, 0.55);
+					stroke-width:0;
+				}
+
+				&.like {
+					fill: transparent;
+					&.active{
+						color: $primary-color;
+						
+						svg{
+							fill:$primary-color !important;
+							stroke:transparent;
+						}
+					}
+					svg{
+						fill: none !important;
+						stroke: rgba($dark, 0.55);
+						stroke-width: 1px;
+					}
+				}
+
+			}
+			.comments{
+				margin-left: 1em;
+			}
+			.dropdown{
+				margin-left: auto;
+				.dropdown-toggle:after{
+					content: none;
+				}
+			}
+		}
+
+		.card__img{
+			width: 100%;
+			margin-bottom: 10px;
+			img{
+				height: auto;
+			}
+		}
+
+		// .card__comments{
+		// 	@include comment--card;
+		// }
+	}
+
+}
