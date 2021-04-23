@@ -1,0 +1,60 @@
+@mixin card--profile{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	.card__img{
+		img{
+			height: $square;
+			width: $square;
+			border-radius:50%;
+			object-fit: cover;
+		}
+	}
+	.card__title{
+		@include card-title;
+	}
+	.card__link{
+		margin-left: auto;
+		svg{
+			height: 22px;
+			width: auto;
+		}
+		a{
+			position: relative;
+		}
+
+	}
+	.card__body{
+		padding:0 16px;
+	}
+}
+
+.post{
+		box-shadow: #23232308 -3px 4px 12px;
+		background-color: #fff;
+		padding: 20px;
+		@include mb;
+		.user--gesture__blocked {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+		.form-control {
+			height: 100%;
+			border: none;
+			box-shadow: none !important;
+			font-weight: 500 ;
+			display: -webkit-box;
+			text-overflow: ellipsis;
+			-webkit-line-clamp: 1;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			background-color:transparent;
+		}
+		.card__body{
+			margin-bottom: 0;
+			position: relative;
+		}
+	}
